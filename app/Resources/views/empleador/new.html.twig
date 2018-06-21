@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+ <div class="container">
+    <h1>Empleador nuevo registro</h1>
+
+    {{ form_start(form) }}
+         <div class="custom-control custom-checkbox ">
+        {{ form_widget(form) }}
+        <div/>
+    
+        <input type="submit" value="Crear" />
+    {{ form_end(form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('empleador_index') }}">Ir al listado</a>
+        </li>
+    </ul>
+ </div>   
+{% endblock %}

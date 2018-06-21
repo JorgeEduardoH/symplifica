@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Empleador list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombrecompleto</th>
+                <th>Sexo</th>
+                <th>Cedula</th>
+                <th>Telefono</th>
+                <th>Direccion</th>
+                <th>Fechanacimiento</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for empleador in empleadors %}
+            <tr>
+                <td><a href="{{ path('empleador_show', { 'id': empleador.id }) }}">{{ empleador.id }}</a></td>
+                <td>{{ empleador.nombreCompleto }}</td>
+                <td>{{ empleador.sexo }}</td>
+                <td>{{ empleador.cedula }}</td>
+                <td>{{ empleador.telefono }}</td>
+                <td>{{ empleador.direccion }}</td>
+                <td>{% if empleador.fechaNacimiento %}{{ empleador.fechaNacimiento|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('empleador_show', { 'id': empleador.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('empleador_edit', { 'id': empleador.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('empleador_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

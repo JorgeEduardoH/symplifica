@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+       {{ form_start(form) }}
+        {{ form_row(form.nombreCompleto) }}
+        {{ form_row(form.sexo) }}
+        {{ form_row(form.cedula) }}
+        {{ form_row(form.telefono) }}
+        {{ form_row(form.tipoContrato) }}
+
+    <button type="submit">Crear!</button>
+    {{ form_end(form) }}
+    
+
+    </body>
+</html>

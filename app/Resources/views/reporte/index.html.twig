@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+<div class="container">
+    <br>
+    <br>
+    <h1>Reporte</h1>
+
+     <table class="table">
+        <thead>
+            <tr>
+                <th>NOMBRE EMPLEADOR</th>
+                <th>CEDULA EMPLEADOR</th>
+                <th>DIRECCIÓN EMPLEADOR</th>
+                <th>NOMBRE EMPLEADO</th>
+                <th>CEDULA EMPLEADO</th>
+                <th>TIPO CONTRATO</th>
+            
+            </tr>
+        </thead>
+        <tbody>
+
+        {% for reporte in reportes %}
+            <tr>
+                
+                <td>{{ reporte.nombre_empleador }}</td>
+                <td>{{ reporte.cedula_empleador }}</td>
+                <td>{{ reporte.direccion_empleador }}</td>
+                <td>{{ reporte.nombre_empleado }}</td>
+                <td>{{ reporte.cedula_empleado }}</td>
+                <td>{{ reporte.tipocontrato_empleado }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+      
+    </ul>
+
+</div>
+{% endblock %}
